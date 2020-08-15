@@ -1,13 +1,13 @@
 import java.awt.*;
 
-class Cell{
+class Cell extends Rectangle{
     // fields
     int x;
     int y;
     static int size = 35;
-
     //constructors
     public Cell(int x, int y){
+        super(x,y, size, size); 
         this.x = x;
         this.y = y;
     }
@@ -24,9 +24,10 @@ class Cell{
         g.drawRect(x,y,size,size);
     }
 
-    boolean contains(Point p){
-        if (p != null){
-            return (x < p.x && x+size > p.x && y < p.y && y+size > p.y);
+    @Override
+    public boolean contains(Point p) {
+        if (p != null) {
+            return super.contains(p.x, p.y);
         } else {
             return false;
         }
