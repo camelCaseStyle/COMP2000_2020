@@ -1,15 +1,12 @@
 import java.awt.*;
 
-class Cell extends Rectangle{
+class Cell extends Rectangle {
     // fields
-    int x;
-    int y;
     static int size = 35;
+
     //constructors
     public Cell(int x, int y){
-        super(x,y, size, size); 
-        this.x = x;
-        this.y = y;
+        super(x,y,size,size);
     }
 
     //methods
@@ -24,10 +21,9 @@ class Cell extends Rectangle{
         g.drawRect(x,y,size,size);
     }
 
-    @Override
-    public boolean contains(Point p) {
-        if (p != null) {
-            return super.contains(p.x, p.y);
+    public boolean contains(Point p){
+        if (p != null){
+            return super.contains(p);
         } else {
             return false;
         }
